@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<div id="ElongLogin" class="formbox">   
+        <div class="inputbox login_id">
+              <span class="icon"></span>
+              <input ng-model="user" class="blur" type="text" id="UserName" value="用户名/卡号/手机号/邮箱">
+              <div class="input_tip" name="input_error_tip" ng-show="isShowU">    您输入的用户名和密码不匹配，请重新输入！
+              </div>
+        </div>
+        <div class="inputbox login_pw" style="" id="input_password">
+            <span class="icon"></span>
+            <input ng-model="psw" class="blur" type="password" method="PassWord" id="PassWord">
+            <div class="input_tip" name="input_error_tip" ng-show="isShowP">您输入的密码和用户名不匹配，请重新输入！
+            </div>
+        </div>
+	  <div class="inputbox">
+	  	  <input ng-model="validc" class="test" type="text" value="验证码" id="ValidateCode">
+	  	  <p class="test-wrap">{{showValidateCode}}</p>
+	  	  <a href="javascript:void (0)" id="ValidateHref" ng-click="randoms()">换一张</a>
+	  	  <div class="input_tip input_tip_yzm" id="validate_result" ng-show="isShow">您输入的验证码有误</div>
+	  </div>
+        <a ng-click="loginTo()" class="loginbtn" href="#?" usable="true" method="LoginSubmit">登录</a>
+    </div>
+</body>
+<script src="lib/angular.js"></script>
+<script src="js/index.js"></script>
+</html>
